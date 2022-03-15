@@ -1,6 +1,6 @@
 import classNames from "classnames";
 
-export default function ShoppingBadge({ completed, onClick }) {
+export default function ShoppingBadge({ completed }) {
   const badgeClass = classNames({
     badge: true,
     "badge-pill": true,
@@ -9,7 +9,7 @@ export default function ShoppingBadge({ completed, onClick }) {
   });
 
   return (
-    <span onClick={onClick} className={badgeClass}>
+    <span className={badgeClass}>
       { completed ? "completed" : "incomplete" }
     </span>
   );
