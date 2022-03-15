@@ -1,7 +1,7 @@
 import ShoppingBadge from "./ShoppingBadge";
 import classNames from "classnames";
 
-export default function ShoppingItem({ item, index }) {
+export default function ShoppingItem({ item, index, onToggleClick, onDeleteClick }) {
   const completeClass = classNames({
     "btn-sm": true,
     "btn-info": !item.completed,
@@ -16,12 +16,12 @@ export default function ShoppingItem({ item, index }) {
       <div className="d-flex align-items-center">
         <ShoppingBadge completed={item.completed} />
         <span className="ml-3">
-          <button onClick={() => console.log('complete')} className={completeClass}>
+          <button onClick={onToggleClick} className={completeClass}>
             { item.completed ? <span>--</span> :  <span>&#10003;</span> }
           </button>
         </span>
         <span className="ml-3">
-          <button onClick={() => console.log('del')} className="btn-sm btn-danger">X</button>
+          <button onClick={onDeleteClick} className="btn-sm btn-danger">X</button>
         </span>
       </div>
     </li>
