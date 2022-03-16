@@ -16,12 +16,12 @@ export default function ShoppingItem({ item, index }) {
       <div className="d-flex align-items-center">
         <ShoppingBadge completed={item.completed} />
         <span className="ml-3">
-          <button onClick={() => console.log('complete')} className={completeClass}>
+          <button onClick={() => console.log('click toggle complete')} className={completeClass}>
             { item.completed ? <span>--</span> :  <span>&#10003;</span> }
           </button>
         </span>
         <span className="ml-3">
-          <button onClick={() => console.log('del')} className="btn-sm btn-danger">X</button>
+          <button onClick={() => console.log('click delete')} className="btn-sm btn-danger">X</button>
         </span>
       </div>
     </li>
