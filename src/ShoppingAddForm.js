@@ -1,11 +1,18 @@
+import { useContext } from "react";
+import { ItemsContext } from "./Contexts";
+
 export default function ShoppingAddForm() {
+  const { addItem } = useContext(ItemsContext);
+  
   function handleSubmit(event) {
     event.preventDefault();
     const newItem = {
       name: event.target.name.value,
       completed: false
     };
-    console.log("ready to create new item:", newItem);
+
+    addItem(newItem);
+    event.target.reset();
   }
 
   return (
