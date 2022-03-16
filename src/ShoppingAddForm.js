@@ -1,7 +1,11 @@
 export default function ShoppingAddForm() {
   function handleSubmit(event) {
     event.preventDefault();
-    console.log("add form submitted");
+    const newItem = {
+      name: event.target.name.value,
+      completed: false
+    };
+    console.log("ready to create new item:", newItem);
   }
 
   return (
